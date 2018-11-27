@@ -1,0 +1,53 @@
+<div class = "row justify-content-center allBurgers">
+
+    <h1 class = "col-10"> Bobs Burgers!</h1>
+
+    <div class = "row col-12 justify-content-center">
+        {{!-- Bob's Uneaten Burgers --}}
+        <div class "col-5 burgers">
+            <div>
+                <h2> Eat the Burger</h2>
+
+                {{#each burgers}}
+                {{#unless devoured}}
+
+                    <label for = "uneatenBurgers" class = "burgers">{{id}}. {{this.burger_name}}</label>
+                    <button class = "btn btn-secondary change-devoured" data-id = "{{this.id}}">BURGERRR TIME!</button>
+                    <br>
+                {{/unless}}
+                {{/each}}
+            </div>
+
+        </div>
+    {{!-- Bob's Eaten Burgers --}}
+        <div class = "col-5 burgers">
+            <h2>Bob's Eaten Burgers</h2>
+            <div>
+                {{#each burgers}}
+                    {{#if devoured}}
+                        <label for = "devouredBurgers" class = "burgers">{{this.burger_name}}</label>
+                        <br>
+                    {{/if}}
+                {{/each}}
+            </div>
+
+        </div>
+    </div>
+
+    <div class = "row col-12 justify-content-center">
+
+        <div class = "col-10 burgers" id="addBurger">
+            <h2>Create New Burger</h2>
+            <form method = "POST" action = "/insertOne" class = "create-form" id = "createBurger" required = "" minlength = "1">
+                <div class="form-group">
+                    <label for="ca"> Name Burger:</label>
+                    <br>
+                    <input type="text" id="ca" name = "newBurger" required="">
+                    <br>
+                    <button class = "btn btn secondary" type="submit">Spawn Burger</button>
+                </div>
+            
+            </form>
+        </div>
+    </div>
+</div>
