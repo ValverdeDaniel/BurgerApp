@@ -76,8 +76,9 @@ var orm = {
         var queryString = "UPDATE " + table;
 
         queryString += " SET ";
-        queryString += objToSql(objColVals);
+        queryString += "devoured";
         queryString += " WHERE ";
+        queryString += id;
         queryString += condition;
 
         console.log(queryString)
