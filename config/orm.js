@@ -79,7 +79,7 @@ var orm = {
         queryString += "devoured";
         queryString += " WHERE ";
         queryString += id;
-        queryString += condition;
+
 
         console.log(queryString)
         connection.query(queryString, function(err, result) {
